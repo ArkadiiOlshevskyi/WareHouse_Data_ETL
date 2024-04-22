@@ -1,0 +1,333 @@
+Warehouse Formula: New = Old * 7
+Test: divisible by 5
+If true: ship product to Warehouse Unit 1
+If false: ship product to Warehouse Unit 6
+
+Warehouse Unit: 1
+Starting Products: 69, 99, 95, 62
+Warehouse Formula: New = Old * Old
+Test: divisible by 17
+If true: ship product to Warehouse Unit 2
+If false: ship product to Warehouse Unit 5
+
+Warehouse Unit: 2
+Starting Products: 59, 81
+Warehouse Formula: New = Old + 8
+Test: divisible by 7
+If true: ship product to Warehouse Unit 4
+If false: ship product to Warehouse Unit 3
+
+Warehouse Unit: 3
+Starting Products: 50, 67, 63, 57, 63, 83, 97
+Warehouse Formula: New = Old + 4
+Test: divisible by 13
+If true: ship product to Warehouse Unit 0
+If false: ship product to Warehouse Unit 7
+
+Warehouse Unit: 4
+Starting Products: 61, 94, 85, 52, 81, 90, 94, 70
+Warehouse Formula: New = Old + 3
+Test: divisible by 19
+If true: ship product to Warehouse Unit 7
+If false: ship product to Warehouse Unit 3
+
+Warehouse Unit: 5
+Starting Products: 69
+Warehouse Formula: New = Old + 5
+Test: divisible by 3
+If true: ship product to Warehouse Unit 4
+If false: ship product to Warehouse Unit 2
+
+Warehouse Unit: 6
+Starting Products: 54, 55, 58
+Warehouse Formula: New = Old + 7
+Test: divisible by 11
+If true: ship product to Warehouse Unit 1
+If false: ship product to Warehouse Unit 5
+
+Warehouse Unit: 7
+Starting Products: 79, 51, 83, 88, 93, 76
+Warehouse Formula: New = Old * 3
+Test: divisible by 2
+If true: ship product to Warehouse Unit 0
+If false: ship product to Warehouse Unit 6
+
+Warehouse Unit: 8
+Starting Products: 86, 72, 59, 90
+Warehouse Formula: New = Old * 3
+Test: divisible by 11
+If true: ship product to Warehouse Unit 7
+If false: ship product to Warehouse Unit 5
+
+Warehouse Unit: 9
+Starting Products: 77, 65
+Warehouse Formula: New = Old - 2
+Test: divisible by 9
+If true: ship product to Warehouse Unit 8
+If false: ship product to Warehouse Unit 6
+
+Warehouse Unit: 10
+Starting Products: 84, 94, 78
+Warehouse Formula: New = Old / 2
+Test: divisible by 19
+If true: ship product to Warehouse Unit 9
+If false: ship product to Warehouse Unit 7
+
+Warehouse Unit: 11
+Starting Products: 58, 63, 70, 82
+Warehouse Formula: New = Old + 10
+Test: divisible by 13
+If true: ship product to Warehouse Unit 10
+If false: ship product to Warehouse Unit 6
+
+Warehouse Unit: 12
+Starting Products: 55, 75, 95
+Warehouse Formula: New = Old * 5
+Test: divisible by 3
+If true: ship product to Warehouse Unit 11
+If false: ship product to Warehouse Unit 9
+
+Warehouse Unit: 13
+Starting Products: 88, 64, 72, 91
+Warehouse Formula: New = Old - 8
+Test: divisible by 17
+If true: ship product to Warehouse Unit 12
+If false: ship product to Warehouse Unit 10
+
+Warehouse Unit: 14
+Starting Products: 96, 54
+Warehouse Formula: New = Old * 2
+Test: divisible by 7
+If true: ship product to Warehouse Unit 13
+If false: ship product to Warehouse Unit 11
+
+Warehouse Unit: 15
+Starting Products: 67, 89, 73
+Warehouse Formula: New = Old + 3
+Test: divisible by 5
+If true: ship product to Warehouse Unit 14
+If false: ship product to Warehouse Unit 12
+
+Warehouse Unit: 16
+Starting Products: 62, 58, 90, 77
+Warehouse Formula: New = Old - 1
+Test: divisible by 11
+If true: ship product to Warehouse Unit 15
+If false: ship product to Warehouse Unit 13
+
+Warehouse Unit: 17
+Starting Products: 80, 92, 66
+Warehouse Formula: New = Old * 4
+Test: divisible by 23
+If true: ship product to Warehouse Unit 16
+If false: ship product to Warehouse Unit 14
+
+Warehouse Unit: 18
+Starting Products: 53, 71, 85
+Warehouse Formula: New = Old + 7
+Test: divisible by 19
+If true: ship product to Warehouse Unit 17
+If false: ship product to Warehouse Unit 15
+
+Warehouse Unit: 19
+Starting Products: 76, 68, 84
+Warehouse Formula: New = Old / 3
+Test: divisible by 13
+If true: ship product to Warehouse Unit 18
+If false: ship product to Warehouse Unit 16
+
+Warehouse Unit: 20
+Starting Products: 99, 61
+Warehouse Formula: New = Old - 6
+Test: divisible by 17
+If true: ship product to Warehouse Unit 19
+If false: ship product to Warehouse Unit 17
+
+Warehouse Unit: 21
+Starting Products: 79, 85, 87
+Warehouse Formula: New = Old * 2
+Test: divisible by 29
+If true: ship product to Warehouse Unit 20
+If false: ship product to Warehouse Unit 18
+
+Warehouse Unit: 22
+Starting Products: 65, 74, 82
+Warehouse Formula: New = Old + 5
+Test: divisible by 7
+If true: ship product to Warehouse Unit 21
+If false: ship product to Warehouse Unit 19
+
+Warehouse Unit: 23
+Starting Products: 54, 90, 72
+Warehouse Formula: New = Old - 4
+Test: divisible by 11
+If true: ship product to Warehouse Unit 22
+If false: ship product to Warehouse Unit 20
+
+Warehouse Unit: 24
+Starting Products: 81, 89
+Warehouse Formula: New = Old * 3
+Test: divisible by 13
+If true: ship product to Warehouse Unit 23
+If false: ship product to Warehouse Unit 21
+
+Warehouse Unit: 25
+Starting Products: 68, 56, 94
+Warehouse Formula: New = Old + 2
+Test: divisible by 17
+If true: ship product to Warehouse Unit 24
+If false: ship product to Warehouse Unit 22
+
+Warehouse Unit: 26
+Starting Products: 75, 83
+Warehouse Formula: New = Old / 4
+Test: divisible by 5
+If true: ship product to Warehouse Unit 25
+If false: ship product to Warehouse Unit 23
+
+Warehouse Unit: 27
+Starting Products: 59, 71, 87
+Warehouse Formula: New = Old - 7
+Test: divisible by 19
+If true: ship product to Warehouse Unit 26
+If false: ship product to Warehouse Unit 24
+
+Warehouse Unit: 28
+Starting Products: 64, 58, 92
+Warehouse Formula: New = Old * 2
+Test: divisible by 23
+If true: ship product to Warehouse Unit 27
+If false: ship product to Warehouse Unit 25
+
+Warehouse Unit: 29
+Starting Products: 82, 74, 66
+Warehouse Formula: New = Old + 9
+Test: divisible by 3
+If true: ship product to Warehouse Unit 28
+If false: ship product to Warehouse Unit 26
+
+Warehouse Unit: 30
+Starting Products: 55, 79, 83
+Warehouse Formula: New = Old - 5
+Test: divisible by 7
+If true: ship product to Warehouse Unit 29
+If false: ship product to Warehouse Unit 27
+
+Warehouse Unit: 31
+Starting Products: 88, 91, 70
+Warehouse Formula: New = Old * 3
+Test: divisible by 17
+If true: ship product to Warehouse Unit 30
+If false: ship product to Warehouse Unit 28
+
+Warehouse Unit: 32
+Starting Products: 62, 81, 73
+Warehouse Formula: New = Old / 2
+Test: divisible by 19
+If true: ship product to Warehouse Unit 31
+If false: ship product to Warehouse Unit 29
+
+Warehouse Unit: 33
+Starting Products: 69, 75, 78
+Warehouse Formula: New = Old + 4
+Test: divisible by 11
+If true: ship product to Warehouse Unit 32
+If false: ship product to Warehouse Unit 30
+
+Warehouse Unit: 34
+Starting Products: 57, 63
+Warehouse Formula: New = Old - 3
+Test: divisible by 13
+If true: ship product to Warehouse Unit 33
+If false: ship product to Warehouse Unit 31
+
+Warehouse Unit: 35
+Starting Products: 89, 85, 77
+Warehouse Formula: New = Old * 5
+Test: divisible by 29
+If true: ship product to Warehouse Unit 34
+If false: ship product to Warehouse Unit 32
+
+Warehouse Unit: 36
+Starting Products: 54, 68, 90
+Warehouse Formula: New = Old + 6
+Test: divisible by 7
+If true: ship product to Warehouse Unit 35
+If false: ship product to Warehouse Unit 33
+
+Warehouse Unit: 37
+Starting Products: 96, 58
+Warehouse Formula: New = Old / 4
+Test: divisible by 23
+If true: ship product to Warehouse Unit 36
+If false: ship product to Warehouse Unit 34
+
+Warehouse Unit: 38
+Starting Products: 61, 71
+Warehouse Formula: New = Old - 8
+Test: divisible by 19
+If true: ship product to Warehouse Unit 37
+If false: ship product to Warehouse Unit 35
+
+Warehouse Unit: 39
+Starting Products: 99, 84, 73
+Warehouse Formula: New = Old * 2
+Test: divisible by 13
+If true: ship product to Warehouse Unit 38
+If false: ship product to Warehouse Unit 36
+
+Warehouse Unit: 40
+Starting Products: 67, 53, 87
+Warehouse Formula: New = Old + 1
+Test: divisible by 11
+If true: ship product to Warehouse Unit 39
+If false: ship product to Warehouse Unit 37
+
+Warehouse Unit: 41
+Starting Products: 80, 92, 65
+Warehouse Formula: New = Old * 4
+Test: divisible by 17
+If true: ship product to Warehouse Unit 40
+If false: ship product to Warehouse Unit 38
+
+Warehouse Unit: 42
+Starting Products: 76, 54
+Warehouse Formula: New = Old - 2
+Test: divisible by 7
+If true: ship product to Warehouse Unit 41
+If false: ship product to Warehouse Unit 39
+
+Warehouse Unit: 43
+Starting Products: 82, 60, 88
+Warehouse Formula: New = Old + 3
+Test: divisible by 5
+If true: ship product to Warehouse Unit 42
+If false: ship product to Warehouse Unit 40
+
+Warehouse Unit: 44
+Starting Products: 70, 77
+Warehouse Formula: New = Old / 3
+Test: divisible by 19
+If true: ship product to Warehouse Unit 43
+If false: ship product to Warehouse Unit 41
+
+Warehouse Unit: 45
+Starting Products: 89, 93
+Warehouse Formula: New = Old * 6
+Test: divisible by 23
+If true: ship product to Warehouse Unit 44
+If false: ship product to Warehouse Unit 42
+
+Warehouse Unit: 46
+Starting Products: 59, 65, 71
+Warehouse Formula: New = Old - 7
+Test: divisible by 17
+If true: ship product to Warehouse Unit 45
+If false: ship product to Warehouse Unit 43
+
+Warehouse Unit: 47
+Starting Products: 78, 84, 91
+Warehouse Formula: New = Old + 5
+Test: divisible by 13
+If true: ship product to Warehouse Unit 46
+If false: ship product to Warehouse Unit 44

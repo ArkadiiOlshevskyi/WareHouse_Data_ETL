@@ -1,0 +1,6 @@
+Warehouse Unit: 0
+Starting Products: 74, 64, 74, 63, 53
+Warehouse Formula: New = Old * 7
+Test: divisible by 5
+If true: ship product to Warehouse Unit 1
+If false: ship product to Warehouse Unit 6

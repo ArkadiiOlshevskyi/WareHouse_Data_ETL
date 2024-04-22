@@ -1,0 +1,8 @@
+Warehouse Formula: New = Old * 7
+Warehouse Formula: New = Old * Old
+Warehouse Formula: New = Old + 8
+Warehouse Formula: New = Old + 4
+Warehouse Formula: New = Old + 3
+Warehouse Formula: New = Old + 5
+Warehouse Formula: New = Old + 7
+Warehouse Formula: New = Old * 3
