@@ -1,9 +1,14 @@
 import os
+import inspect
+import logging
 from typing import List
 
 from data_deserializer.WareHouse import *
 from data_deserializer.SortingTest import *
 from data_deserializer.Formula import *
+from src.data_deserializer import WareHouse
+
+logger = logging.getLogger(__name__)
 
 
 def parse_data(data_filename: str) -> List[WareHouse]:
@@ -19,10 +24,19 @@ def parse_data(data_filename: str) -> List[WareHouse]:
     Raises:
         Exception: If there is an issue reading the file or parsing its content.
     """
-    current_dir = os.getcwd()
-    full_path = os.path.join(current_dir, data_filename)
+    function_name = inspect.currentframe().f_code.co_name
+    logging.info(f"Parsing data from .txt file...->{function_name}")
 
-    all_warehouses = []
+    script_dir = os.path.dirname(__file__)
+    project_root = os.path.abspath(os.path.join(script_dir, os.pardir, os.pardir))
+    full_path = os.path.join(project_root, data_filename)
+
+    if not os.path.exists(full_path):
+        error_msg = f"File not found: {full_path}"
+        logger.error(error_msg)
+        raise FileNotFoundError(error_msg)
+
+    all_warehouses: list[WareHouse] = []
 
     try:
         with open(full_path, 'r') as data_file:
@@ -44,8 +58,11 @@ def parse_data(data_filename: str) -> List[WareHouse]:
                     idx += 6  # move to the next warehouse block
                 else:
                     idx += 1
+                logging.info(f"Data extracted -> {function_name}")
+                print(f"Data extracted -> {function_name}")
     except Exception as e:
         print(f"Error while parsing data: {e}")
+        logging.error(f"Error while parsing data: {e}")
 
     return all_warehouses
 
@@ -60,7 +77,8 @@ def parse_data(data_filename: str) -> List[WareHouse]:
 # """
 # ########################### TEST ##################################################################
 # # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\src\data_processor_main.py"
-# filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\data\dataset.txt"
+# # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\data\dataset.txt"
+# filename = "Arkadii_Assignment_HT\data\dataset.txt"
 # all_warehouses = parse_data(filename)
 #
 # # Corrected testing code

@@ -1,0 +1,18 @@
+2024-04-23 13:42:07 - DEBUG - log_setup - Logging setup complete.
+2024-04-23 13:42:07 - INFO - root - Parsing data from .txt file...->parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - root - Data extracted -> parse_data
+2024-04-23 13:42:07 - INFO - __main__ - Main -> ETL executed

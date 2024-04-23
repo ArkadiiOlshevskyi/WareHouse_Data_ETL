@@ -1,0 +1,8 @@
+2024-04-23 13:24:55 - DEBUG - log_setup - Logging setup complete.
+2024-04-23 13:24:55 - INFO - root - Parsing data from .txt file...->parse_data
+2024-04-23 13:24:55 - ERROR - root - Error while parsing data: [Errno 2] No such file or directory: 'D:\\0_tech\\1_ARK_DS\\heatTransformers_assignment\\Arkadii_Assignment_HT\\src\\./data/dataset.txt'
+2024-04-23 13:24:55 - INFO - __main__ - Main -> ETL executed
+2024-04-23 13:25:40 - DEBUG - log_setup - Logging setup complete.
+2024-04-23 13:25:40 - INFO - root - Parsing data from .txt file...->parse_data
+2024-04-23 13:25:40 - ERROR - root - Error while parsing data: [Errno 2] No such file or directory: 'D:\\0_tech\\1_ARK_DS\\heatTransformers_assignment\\Arkadii_Assignment_HT\\src\\.\\data\\dataset.txt'
+2024-04-23 13:25:40 - INFO - __main__ - Main -> ETL executed

@@ -8,6 +8,8 @@ class Transaction:
     # generated uuid id - for unique id number of transaction
     # time_stamp        - for unique time value of transaction
     """
+
+    # TODO -> transaction should reflect SQL row (table stucture)
     def __init__(self,
                  transaction_number: str,
                  time_stamp: str):
