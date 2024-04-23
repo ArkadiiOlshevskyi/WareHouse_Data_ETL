@@ -55,11 +55,10 @@ def parse_data(data_filename: str) -> List[WareHouse]:
                     formula_original_str = lines[idx + 2].split(":")[1].strip()
                     formula = Formula(formula_original_str, formula_original_str)
 
-                    test_str = lines[idx + 3]
                     test_formula_text = lines[idx + 3].split(":")[1]
                     if_true_str = lines[idx + 4]
                     if_false_str = lines[idx + 5]
-                    test = SortingTest(test_formula_text, test_str, if_true_str, if_false_str)
+                    test = SortingTest(test_formula_text, if_true_str, if_false_str)
 
                     new_warehouse = WareHouse(unit,
                                               warehouse_name,
@@ -90,36 +89,18 @@ def parse_data(data_filename: str) -> List[WareHouse]:
 # If false: ship product to Warehouse Unit 6
 # """
 # ########################### TEST ##################################################################
-# # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\src\data_processor_main.py"
-# # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\data\dataset.txt"
 # filename = "WareHouse_Data_ETL\data\dataset.txt"
 # all_warehouses = parse_data(filename)
 #
-# # Corrected testing code
 # print("###### Testing Warehouse and Products inside ######")
 # for warehouse in all_warehouses:
-#     print(f"Created -> {warehouse} ")
-#     print()
-#     print(f"Test Warehouse Unit -> {warehouse.unit}")
 #     print(f"Test Warehouse NAME -> {warehouse.name}")
-#     print(f"Test Warehouse Type -> {type(warehouse.unit)}")
-#
-#     print(f"TEST SORTING FORMULA TEXT: {warehouse.test.test_formula_text}")
 #
 #     for product in warehouse.starting_products:
-#         print()
-#         print(f"Test product -> {product}")
-#         print(f"Test product Init Numb -> {product.initial_number}")
-#         print(f"Test product Last Numb -> {product.last_number}")
-#         print(f"Test product Type -> {type(product)}")
-#
-#
-#         test_value_for_formula = product.initial_number
-#
-#         # Directly using the formula without iterating
-#         try:
-#             result = warehouse.formula.calculate(test_value_for_formula)
-#             print(f"Result of '{warehouse.formula.formula_str}' "
-#                   f"with input {test_value_for_formula} is {result}")
-#         except ValueError as e:
-#             print(e)
+#         new_test_result = warehouse.test.calculate(product.initial_number)
+#         print(type(new_test_result))
+#         print(f"Init Number -> {product.initial_number}")
+#         print(f"TEST SORTING FORMULA TEXT: {warehouse.test.test_formula_text}")
+#         print(f"Test Result Product number -> {new_test_result.new_product_number}")
+#         print(f"Test Result Warehouse ID -> {new_test_result.new_warehouse_unit_number}")
+#         print(f"Test Result Warehouse Logic -> {new_test_result.is_divisible}")

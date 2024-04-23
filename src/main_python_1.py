@@ -11,9 +11,12 @@ log_filename = "WareHouse_Data_ETL\\logs\\log.txt"
 data_file = "WareHouse_Data_ETL\\data\\dataset.txt"
 
 
-def main(business_days, data_file):
+def main(business_days: object,
+         data_file: object):
     """
     Main ETL pipeline function.
+    :type data_file: object
+    :type business_days: object
     :return: None
     """
     function_name = inspect.currentframe().f_code.co_name
@@ -43,7 +46,7 @@ def main(business_days, data_file):
                     print(type(processed_product))
 
                     shipping_location = warehouse.formula.calculate(product.initial_number)
-                    print(f"{shipping_location} - 1st Shipping Location -> WareHouse Formula")
+                    print(f"{shipping_location} - 1st Shipping Location -> WareHouse Formula {warehouse.formula.formula_original_text}")
 
                     before_shipped = divided_by_3_rounded(shipping_location, divider=3)
                     print(f"{before_shipped} - 2nd before Shipped -> Fixed formula")
@@ -51,6 +54,18 @@ def main(business_days, data_file):
                     when_shipped = warehouse.test.calculate(before_shipped)
                     print(f"{when_shipped} - 3nd When Shipped -> Sorting Test")
 
+                    new_warehouse_unit = when_shipped.new_warehouse_unit_number
+                    print(f"{new_warehouse_unit} - New WareHouse Unit Number -> Sorting Test Results")
+
+                    new_product_number = when_shipped.new_product_number
+                    print(f"{new_product_number} - New Product Number -> Sorting Test Results")
+
+                    # TODO Class transaction
+                    # TODO Extract object from list
+                    # TODO Change product last number wint new_product number
+                    # TODO Put product to new warehouse
+                    # TODO Move Products from list new to current
+        #TODO print balances for today
 
 
 

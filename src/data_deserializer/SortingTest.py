@@ -1,51 +1,73 @@
+import inspect
+import logging
+import math
+
+logger = logging.getLogger(__name__)
+
+
 class TestResult:
     """
     Encapsulates the result of a sorting test applied to a product.
-
     Attributes:
-        product_number (int): The product number being tested.
-        warehouse_unit_number (int): The resulting warehouse unit to which the product is assigned.
+        new_product_number (int): The product number being tested.
+        new_warehouse_unit_number (int): The warehouse unit to which the product is assigned.
+        is_divisible (str): Indicates if the product number is divisible by the divisor ("True" or "False").
     """
-    def __init__(self, product_number: int, warehouse_unit_number: int):
-        self.product_number = product_number
-        self.warehouse_unit_number = warehouse_unit_number
+
+    def __init__(self, new_product_number: int,
+                 warehouse_unit_number: int,
+                 is_divisible: str):
+        self.new_product_number = new_product_number
+        self.new_warehouse_unit_number = warehouse_unit_number
+        self.is_divisible = is_divisible
+
+    def __str__(self):
+        return (f"New Product Number: {self.new_product_number}, "
+                f"New Warehouse Unit: {self.new_warehouse_unit_number}, "
+                f"Is Divisible: {self.is_divisible}")
 
 
 class SortingTest:
     """
-    Represents a conditional test to sort products into different warehouse units based on a criteria.
-
+    Represents a test to sort products into different warehouse units based on divisibility.
     Attributes:
-        test_formula (str): The test condition, typically involving divisibility.
-        if_true_warehouse_unit (int): Warehouse unit number if the condition is true.
-        if_false_warehouse_unit (int): Warehouse unit number if the condition is false.
+        divisor (int): The divisor for the test.
+        if_true_warehouse_unit (int): Warehouse unit number if the product is divisible.
+        if_false_warehouse_unit (int): Warehouse unit number if the product is not divisible.
     """
+
     def __init__(self,
                  test_formula_text: str,
-                 test_str: str,
-                 if_true_str: str,
-                 if_false_str: str):
+                 if_true_warehouse_unit: str,
+                 if_false_warehouse_unit: str):
+        self.divisor = int(test_formula_text.split()[-1])
+        self.if_true_warehouse_unit = int(if_true_warehouse_unit.split()[-1])
+        self.if_false_warehouse_unit = int(if_false_warehouse_unit.split()[-1])
         self.test_formula_text = test_formula_text
-        self.test_formula = test_str.strip().replace("divisible by", "x %")
-        self.if_true_warehouse_unit = int(if_true_str.split()[-1])
-        self.if_false_warehouse_unit = int(if_false_str.split()[-1])
 
-    def calculate(self, product_number: int) -> TestResult:
+    def calculate(self, initial_product_number: int) -> TestResult:
         """
-        Evaluates the test formula and determines the warehouse unit based on the outcome.
-
+        Evaluates the product number for divisibility, assigns a warehouse based on the result.
         Args:
-            product_number (int): The number to test against the formula.
-
+            initial_product_number (int): The product number to test.
         Returns:
-            TestResult: The outcome of the test, indicating the appropriate warehouse unit.
-
-        Raises:
-            ValueError: If an error occurs in evaluating the test condition.
+            TestResult: Outcome of the test, including product number, assigned warehouse unit, and divisibility result.
         """
+        function_name = inspect.currentframe().f_code.co_name
+        logger.info(f"Running {SortingTest.__name__} {function_name} with product_number= {initial_product_number}")
+        print(f"Running {SortingTest.__name__} {function_name} with product_number= {initial_product_number}")
+
         try:
-            result = eval(self.test_formula, {'__builtins__': None}, {'x': product_number})
-            warehouse_unit_number = self.if_true_warehouse_unit if result == 0 else self.if_false_warehouse_unit
-            return TestResult(product_number, warehouse_unit_number)
+            is_divisible = initial_product_number % self.divisor == 0
+            warehouse_unit_number = self.if_true_warehouse_unit if is_divisible else self.if_false_warehouse_unit
+
+            new_product_number = round(initial_product_number / self.divisor)
+
+            result = TestResult(new_product_number, warehouse_unit_number, "True" if is_divisible else "False")
+            logger.info(f"Successfully tested: {result}")
+            print(f"Successfully tested: {result}")
+            return result
         except Exception as e:
-            raise ValueError(f"Error calculating test formula: {e}")
+            logger.error(f"Error during test: {e}")
+            print(f"Error during test: {e}")
+            raise

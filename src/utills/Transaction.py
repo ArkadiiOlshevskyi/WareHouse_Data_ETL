@@ -9,7 +9,7 @@ class Transaction:
     # time_stamp        - for unique time value of transaction
     """
 
-    # TODO -> transaction should reflect SQL row (table stucture)
+    # TODO -> transaction should reflect SQL row (table structure)
     def __init__(self,
                  transaction_number: str,
                  time_stamp: str):
