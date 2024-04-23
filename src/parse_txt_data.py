@@ -45,15 +45,29 @@ def parse_data(data_filename: str) -> List[WareHouse]:
             while idx < len(lines):
                 if lines[idx].startswith("Warehouse Unit"):
                     unit = int(lines[idx].split(":")[1].strip())
+
+                    warehouse_name = lines[idx].split(":")[0].strip() + ":"
+
                     products_line = lines[idx + 1]
                     products = [int(p.strip()) for p in products_line.split(":")[1].strip().split(",")]
-                    product_objs = [Product(initial_number=num, last_number=0) for num in products]
-                    formula = Formula(lines[idx + 2].split(":")[1].strip())
+                    product_objs = [Product(initial_number=num, last_number=num) for num in products]
+
+                    formula_original_str = lines[idx + 2].split(":")[1].strip()
+                    formula = Formula(formula_original_str, formula_original_str)
+
                     test_str = lines[idx + 3]
+                    test_formula_text = lines[idx + 3].split(":")[1]
                     if_true_str = lines[idx + 4]
                     if_false_str = lines[idx + 5]
-                    test = SortingTest(test_str, if_true_str, if_false_str)
-                    new_warehouse = WareHouse(unit, product_objs, [], formula, test)
+                    test = SortingTest(test_formula_text, test_str, if_true_str, if_false_str)
+
+                    new_warehouse = WareHouse(unit,
+                                              warehouse_name,
+                                              product_objs,
+                                              [],
+                                              formula,
+                                              test)
+
                     all_warehouses.append(new_warehouse)
                     idx += 6  # move to the next warehouse block
                 else:
@@ -78,7 +92,7 @@ def parse_data(data_filename: str) -> List[WareHouse]:
 # ########################### TEST ##################################################################
 # # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\src\data_processor_main.py"
 # # filename = r"D:\0_tech\1_ARK_DS\heatTransformers_assignment\Arkadii_Assignment_HT\data\dataset.txt"
-# filename = "Arkadii_Assignment_HT\data\dataset.txt"
+# filename = "WareHouse_Data_ETL\data\dataset.txt"
 # all_warehouses = parse_data(filename)
 #
 # # Corrected testing code
@@ -87,7 +101,10 @@ def parse_data(data_filename: str) -> List[WareHouse]:
 #     print(f"Created -> {warehouse} ")
 #     print()
 #     print(f"Test Warehouse Unit -> {warehouse.unit}")
+#     print(f"Test Warehouse NAME -> {warehouse.name}")
 #     print(f"Test Warehouse Type -> {type(warehouse.unit)}")
+#
+#     print(f"TEST SORTING FORMULA TEXT: {warehouse.test.test_formula_text}")
 #
 #     for product in warehouse.starting_products:
 #         print()
@@ -96,11 +113,13 @@ def parse_data(data_filename: str) -> List[WareHouse]:
 #         print(f"Test product Last Numb -> {product.last_number}")
 #         print(f"Test product Type -> {type(product)}")
 #
+#
 #         test_value_for_formula = product.initial_number
 #
 #         # Directly using the formula without iterating
 #         try:
 #             result = warehouse.formula.calculate(test_value_for_formula)
-#             print(f"Result of '{warehouse.formula.formula_str}' with input {test_value_for_formula} is {result}")
+#             print(f"Result of '{warehouse.formula.formula_str}' "
+#                   f"with input {test_value_for_formula} is {result}")
 #         except ValueError as e:
 #             print(e)

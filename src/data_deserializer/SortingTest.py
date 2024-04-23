@@ -20,7 +20,12 @@ class SortingTest:
         if_true_warehouse_unit (int): Warehouse unit number if the condition is true.
         if_false_warehouse_unit (int): Warehouse unit number if the condition is false.
     """
-    def __init__(self, test_str: str, if_true_str: str, if_false_str: str):
+    def __init__(self,
+                 test_formula_text: str,
+                 test_str: str,
+                 if_true_str: str,
+                 if_false_str: str):
+        self.test_formula_text = test_formula_text
         self.test_formula = test_str.strip().replace("divisible by", "x %")
         self.if_true_warehouse_unit = int(if_true_str.split()[-1])
         self.if_false_warehouse_unit = int(if_false_str.split()[-1])

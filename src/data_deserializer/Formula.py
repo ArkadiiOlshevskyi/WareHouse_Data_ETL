@@ -5,7 +5,8 @@ class Formula:
     Attributes:
         formula_str (str): The string representation of the formula, where 'Old' represents the old number.
     """
-    def __init__(self, formula_str: str):
+    def __init__(self, formula_original_text: str, formula_str: str):
+        self.formula_original_text = formula_original_text
         self.formula_str = formula_str.replace('New =', '').strip()
 
     def calculate(self, input_value: int) -> int:
