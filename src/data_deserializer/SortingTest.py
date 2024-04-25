@@ -1,22 +1,21 @@
 import inspect
 import logging
-import math
 
 logger = logging.getLogger(__name__)
 
 
-class TestResult:
+class SortingTestResult:
     """
     Encapsulates the result of a sorting test applied to a product.
     Attributes:
         new_product_number (int): The product number being tested.
         new_warehouse_unit_number (int): The warehouse unit to which the product is assigned.
-        is_divisible (str): Indicates if the product number is divisible by the divisor ("True" or "False").
+        is_divisible (bool): Indicates if the product number is divisible by the divisor ("True" or "False").
     """
 
     def __init__(self, new_product_number: int,
                  warehouse_unit_number: int,
-                 is_divisible: str):
+                 is_divisible: bool):
         self.new_product_number = new_product_number
         self.new_warehouse_unit_number = warehouse_unit_number
         self.is_divisible = is_divisible
@@ -45,25 +44,29 @@ class SortingTest:
         self.if_false_warehouse_unit = int(if_false_warehouse_unit.split()[-1])
         self.test_formula_text = test_formula_text
 
-    def calculate(self, initial_product_number: int) -> TestResult:
+    def calculate(self, initial_product_number: int) -> SortingTestResult:
         """
         Evaluates the product number for divisibility, assigns a warehouse based on the result.
         Args:
             initial_product_number (int): The product number to test.
         Returns:
-            TestResult: Outcome of the test, including product number, assigned warehouse unit, and divisibility result.
+            SortingTestResult: Outcome of the test, including product number, assigned warehouse unit, and divisibility result.
         """
         function_name = inspect.currentframe().f_code.co_name
-        logger.info(f"Running {SortingTest.__name__} {function_name} with product_number= {initial_product_number}")
-        print(f"Running {SortingTest.__name__} {function_name} with product_number= {initial_product_number}")
+        message_info = (f"Running {self.__class__.__name__} {function_name} \n"
+                    f"with product_number = {initial_product_number} \n"
+                    f"and Sorting Test -> {self.test_formula_text}")
+        logger.info(message_info)
+        print(message_info)
 
         try:
             is_divisible = initial_product_number % self.divisor == 0
             warehouse_unit_number = self.if_true_warehouse_unit if is_divisible else self.if_false_warehouse_unit
-
             new_product_number = round(initial_product_number / self.divisor)
 
-            result = TestResult(new_product_number, warehouse_unit_number, "True" if is_divisible else "False")
+            result = SortingTestResult(new_product_number,
+                                       warehouse_unit_number,
+                                       is_divisible)
             logger.info(f"Successfully tested: {result}")
             print(f"Successfully tested: {result}")
             return result

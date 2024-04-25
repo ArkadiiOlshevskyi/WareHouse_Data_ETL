@@ -72,7 +72,8 @@ def parse_data(data_filename: str) -> List[WareHouse]:
                 else:
                     idx += 1
                 logging.info(f"Data extracted -> {function_name}")
-                print(f"Data extracted -> {function_name}")
+                # print(f"Data extracted -> {function_name}")
+
     except Exception as e:
         print(f"Error while parsing data: {e}")
         logging.error(f"Error while parsing data: {e}")

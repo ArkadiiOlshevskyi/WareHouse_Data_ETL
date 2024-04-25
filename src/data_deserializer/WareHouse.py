@@ -30,4 +30,4 @@ class WareHouse:
                 f"Starting Products: {[str(product) for product in self.starting_products]}\n"
                 f"New Arrivals Products: {[str(product) for product in self.new_arrivals_products]}\n"
                 f"Formula: {self.formula.formula_str}\n"
-                f"Test: {self.test.test_formula}")
+                f"Test: {self.test.test_formula_text}")

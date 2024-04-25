@@ -13,3 +13,13 @@ class Product:
     def __str__(self):
         return (f"Product: Initial Number -> {self.initial_number}, "
                 f"Last Number -> {self.last_number}")
+
+    def update_last_number(self, new_number: int):
+        """
+        Updates Product last number to a new processed value.
+        Args:
+            new_number (int): The new last number to be set for the product.
+        :param new_number:
+        :return:
+        """
+        self.last_number = new_number
